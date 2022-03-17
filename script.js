@@ -98,8 +98,6 @@ function renderStartPage() {
                 if (userPasswordInput.value == usersFromLS[i].userPassword) {
 
                     renderLoggedInView()
-                    userNameInput.value = ''
-                    userPasswordInput.value = ''
 
                 }
             }
@@ -126,13 +124,14 @@ function renderLoggedInView() {
     loginOrOutBtn.addEventListener("click", function () {
         localStorage.removeItem("keepUserLoggedIn")
         renderStartPage()
+
     })
 
 }
 
 
 
-//CREATE NEW USER 
+//CREATE NEW USER VIEW
 function createNewUser() {
     mainView.innerHTML = "";
     const newUserDescription = document.createElement("p");
@@ -152,9 +151,6 @@ function createNewUser() {
             userPassword: newUserPassword.value
         })
         localStorage.setItem("users", JSON.stringify(usersFromLS));
-
-        newUserUsername.value = ''
-        newUserPassword.value = ''
 
         alert("New user created, please log in")
         renderStartPage()

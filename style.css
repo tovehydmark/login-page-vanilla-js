@@ -20,6 +20,7 @@ footer {
     bottom: 0;
     background-color: rgb(238, 94, 94);
     height: 70px;
+    width: 100%;
 
 }
 
@@ -29,8 +30,9 @@ body {
 }
 
 p {
-    width: 50%;
-    margin: 0;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 input {
@@ -51,5 +53,6 @@ button {
     text-align: center;
     align-items: center;
     background-color: darkgoldenrod;
-    /* height: 70vh; */
+    min-height: 70vh;
+    padding-top: 30px;
 }
