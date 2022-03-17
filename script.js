@@ -149,13 +149,20 @@ function createNewUser() {
 
         let usersFromLS = JSON.parse(localStorage.getItem("users"));
 
-        usersFromLS.push({
-            userName: newUserUsername.value,
-            userPassword: newUserPassword.value
-        })
-        localStorage.setItem("users", JSON.stringify(usersFromLS));
+        //ENSURES NEW USER PROVIDES BOTH USERNAME AND PASSWORD
+        if ((newUserUsername.value.length >= 1) && (newUserPassword.value.length >= 1)) {
 
-        alert("New user created, please log in")
-        renderStartPage()
+            usersFromLS.push({
+                userName: newUserUsername.value,
+                userPassword: newUserPassword.value
+            })
+            localStorage.setItem("users", JSON.stringify(usersFromLS));
+
+            alert("New user created, please log in")
+            renderStartPage()
+
+        } else {
+            alert("Please provide both username and password")
+        }
     })
 }
