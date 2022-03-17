@@ -109,18 +109,16 @@ function renderStartPage() {
 
 
 
-
+//SHOWS THE LOGGED IN VIEW
 function renderLoggedInView() {
     mainView.innerHTML = "";
     const welcomeParagraph = document.createElement("p");
-    const loggedInFromLS = localStorage.getItem("loggedIn");
 
     let fetchLoggedInUser = JSON.parse(localStorage.getItem("keepUserLoggedIn"));
 
     welcomeParagraph.innerText = "Welcome " + fetchLoggedInUser.userName
     loginOrOutBtn.innerText = "Log out";
     mainView.append(loginOrOutBtn, welcomeParagraph);
-
 
 
     loginOrOutBtn.addEventListener("click", function () {
