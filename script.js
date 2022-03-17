@@ -1,6 +1,3 @@
-const header = document.getElementById("header")
-const footer = document.getElementById("footer")
-
 const main = document.getElementById("main");
 
 const mainView = document.createElement("div");
