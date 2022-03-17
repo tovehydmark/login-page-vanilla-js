@@ -35,7 +35,7 @@ newUserPassword.setAttribute("id", "newUserPassword");
 
 
 const userArray = [{
-    userName: "janne",
+    userName: "tove",
     userPassword: "test"
 }]
 
