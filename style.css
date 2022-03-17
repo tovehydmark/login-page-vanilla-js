@@ -9,7 +9,8 @@ header {
 h1 {
     margin: 0;
     padding: 30px;
-    color: rgb(238, 94, 94);
+    color: rgb(235, 173, 16);
+    /* color: rgb(238, 94, 94); */
     text-decoration: overline;
     font-size: 2.5rem;
 }
@@ -18,7 +19,9 @@ footer {
     text-align: center;
     position: sticky;
     bottom: 0;
-    background-color: rgb(238, 94, 94);
+    background-color: rgb(182, 135, 17);
+
+    /* background-color: rgb(238, 94, 94); */
     height: 70px;
     width: 100%;
 
@@ -32,19 +35,27 @@ body {
 p {
     width: 60%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
 }
 
 input {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    padding: 2px;
     margin: 5px;
-
 }
 
 button {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 5px;
+    padding: 5px;
+    border: 2px solid rgb(45, 20, 47);
+    border-radius: 5px;
+}
 
+button:hover {
+    background-color: rgb(46, 45, 45);
+    color: white;
 }
 
 #mainView {
@@ -52,7 +63,7 @@ button {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    background-color: darkgoldenrod;
-    min-height: 70vh;
+    background-color: rgb(243, 242, 238);
+    min-height: 65vh;
     padding-top: 30px;
 }
