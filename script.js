@@ -69,7 +69,7 @@ renderStartPage()
 function renderStartPage() {
     mainView.innerHTML = "";
     const startPageDescription = document.createElement("p");
-    startPageDescription.innerText = "To log in, please type your username and password. If you don't have a user account you may create one by pressing 'Create new user' below."
+    startPageDescription.innerText = "To log in, please type your username and password. If you don't have a user account you may create one below."
     mainView.append(startPageDescription, userNameInput, userPasswordInput, loginOrOutBtn, createNewUserViewBtn);
     loginOrOutBtn.innerText = "Log in";
 
@@ -100,6 +100,9 @@ function renderStartPage() {
                     renderLoggedInView()
 
                 }
+            } else {
+                alert("Username and password does not match")
+                return
             }
         }
     })
