@@ -1,9 +1,12 @@
-const root = document.getElementById("root");
+const header = document.getElementById("header")
+const footer = document.getElementById("footer")
+
+const main = document.getElementById("main");
 
 const mainView = document.createElement("div");
 mainView.setAttribute("id", "mainView");
 
-root.append(mainView);
+main.append(mainView);
 
 const userNameInput = document.createElement("input");
 userNameInput.setAttribute("id", "userNameInput");
@@ -53,7 +56,7 @@ let keepUserLoggedIn = {
 }
 
 function onLoadView() {
-
+    //CONTROLS IF A USER IS LOGGED IN VIA LOCAL STORAGE
     let isThereAnythingInLS = JSON.parse(localStorage.getItem("keepUserLoggedIn"));
 
 
@@ -98,6 +101,8 @@ function renderStartPage() {
                 if (userPasswordInput.value == usersFromLS[i].userPassword) {
 
                     renderLoggedInView()
+                    userNameInput.value = ''
+                    userPasswordInput.value = ''
 
                 }
             }
@@ -130,7 +135,7 @@ function renderLoggedInView() {
 
 
 
-//CREATE NEW USER VIEW
+//CREATE NEW USER 
 function createNewUser() {
     mainView.innerHTML = "";
     const newUserDescription = document.createElement("p");
@@ -150,6 +155,9 @@ function createNewUser() {
             userPassword: newUserPassword.value
         })
         localStorage.setItem("users", JSON.stringify(usersFromLS));
+
+        newUserUsername.value = ''
+        newUserPassword.value = ''
 
         alert("New user created, please log in")
         renderStartPage()

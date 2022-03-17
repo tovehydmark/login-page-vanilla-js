@@ -3,3 +3,23 @@ body {
     margin-right: 20%;
     margin-left: 20%;
 }
+
+input {
+    font-size: 1.3rem;
+    margin: 5px;
+
+}
+
+button {
+    font-size: 1.3rem;
+    margin: 5px;
+
+}
+
+#mainView {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+}
