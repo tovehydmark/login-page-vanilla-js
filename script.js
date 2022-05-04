@@ -56,8 +56,11 @@ function onLoadView() {
     //CONTROLS IF A USER IS LOGGED IN VIA LOCAL STORAGE
     let isThereAnythingInLS = JSON.parse(localStorage.getItem("keepUserLoggedIn"));
 
+    console.log(isThereAnythingInLS);
+    if (isThereAnythingInLS == null) {
+        console.log("Det fanns ingen data i LS");
 
-    if (isThereAnythingInLS.loggedInStatus == true) {
+    } else if (isThereAnythingInLS.loggedInStatus == true) {
 
         renderLoggedInView()
     }
@@ -81,7 +84,8 @@ function renderStartPage() {
         let usersFromLS = JSON.parse(localStorage.getItem("users"));
 
         for (let i = 0; i < usersFromLS.length; i++) {
-            if (userNameInput.value == usersFromLS[i].userName) {
+
+            if (usersFromLS[i].userName = userNameInput.value) {
 
                 keepUserLoggedIn = JSON.parse(localStorage.getItem(keepUserLoggedIn));
 
@@ -101,7 +105,7 @@ function renderStartPage() {
 
                 }
             } else {
-                alert("Username and password does not match")
+                console.log("Username and password does not match")
                 return
             }
         }
