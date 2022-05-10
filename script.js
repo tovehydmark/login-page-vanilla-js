@@ -83,29 +83,28 @@ function renderStartPage() {
 
         let usersFromLS = JSON.parse(localStorage.getItem("users"));
 
+
         for (let i = 0; i < usersFromLS.length; i++) {
 
-            if (usersFromLS[i].userName = userNameInput.value) {
+            let foundUser = usersFromLS.find(user => user.userName == userNameInput.value)
 
-                keepUserLoggedIn = JSON.parse(localStorage.getItem(keepUserLoggedIn));
-
-                keepUserLoggedIn = {
-                    userName: userNameInput.value,
-                    password: userPasswordInput.value,
-                    loggedInStatus: true
-                }
-
-
-                localStorage.setItem("keepUserLoggedIn", JSON.stringify(keepUserLoggedIn))
-
+            if (foundUser) {
 
                 if (userPasswordInput.value == usersFromLS[i].userPassword) {
+                    keepUserLoggedIn = {
+                        userName: userNameInput.value,
+                        password: userPasswordInput.value,
+                        loggedInStatus: true
+                    }
+
+                    localStorage.setItem("keepUserLoggedIn", JSON.stringify(keepUserLoggedIn))
 
                     renderLoggedInView()
 
                 }
             } else {
                 console.log("Username and password does not match")
+
                 return
             }
         }
