@@ -83,6 +83,7 @@ function renderStartPage() {
 
         let usersFromLS = JSON.parse(localStorage.getItem("users"));
 
+        //Checks if user from input is among registered users. If yes, the user is logged in after a password control and loggedInStatus is updated
 
         for (let i = 0; i < usersFromLS.length; i++) {
 
